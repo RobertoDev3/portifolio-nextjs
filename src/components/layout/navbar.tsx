@@ -1,9 +1,10 @@
 'use client';
 
-import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
 
 const links = [
   { href: '/', label: '_ola' },
@@ -25,9 +26,9 @@ export function NavBar() {
 
   return (
     <nav className='relative flex w-full items-center justify-between border-b md:justify-start'>
-      <a href='/' className='min-w-[220px] p-4'>
+      <Link href='/' className='min-w-[220px] p-4'>
         roberto-teixeira
-      </a>
+      </Link>
 
       <button
         className='block cursor-pointer p-4 md:hidden'
@@ -40,7 +41,7 @@ export function NavBar() {
       <div
         className={cn(
           isOpen ? 'block' : 'hidden',
-          'bg-background absolute top-14 left-0 h-[calc(100dvh-145px)] w-full border-t md:static md:block md:h-auto md:w-auto md:bg-transparent',
+          'bg-background absolute top-14 left-0 h-[calc(100dvh-145px)] w-full border-t md:static md:block md:h-auto md:w-auto md:border-t-0 md:bg-transparent',
         )}
       >
         <ul className='flex flex-col md:flex-row md:items-center'>
@@ -54,9 +55,13 @@ export function NavBar() {
                 isActiveLink(link.href),
               )}
             >
-              <a href={link.href} onClick={() => setIsOpen(false)}>
+              <Link
+                href={link.href}
+                className='block'
+                onClick={() => setIsOpen(false)}
+              >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
