@@ -50,7 +50,7 @@ export function NavBar() {
               className={cn(
                 'relative border-b p-4 md:min-w-[120px]',
                 'md:border-r md:border-b-0 md:text-center md:first:border-l',
-                'before:bottom-0 before:left-0 before:h-1 before:w-full before:bg-[#FFB86A]/70 before:[content:""] hover:before:absolute',
+                'before:bottom-0 before:left-0 before:h-full before:w-1 before:bg-[#FFB86A]/70 before:[content:""] hover:before:absolute md:before:h-1 md:before:w-full',
                 isActiveLink(link.href),
               )}
             >
