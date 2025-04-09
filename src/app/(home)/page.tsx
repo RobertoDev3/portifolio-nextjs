@@ -1,5 +1,4 @@
-import { Footer } from '@/components/layout/footer';
-import { NavBar } from '@/components/layout/navbar';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       </div>
       <div className='flex flex-col gap-2 text-sm'>
         <p>// Encontre meu perfil do GitHub em:</p>
-        <a
+        <Link
           href='https://github.com/RobertoDev3'
           target='_blank'
           rel='noopener noreferrer'
@@ -23,7 +22,7 @@ export default function Home() {
           <span className='text-[#615FFF]'>const</span>
           <span className='text-[#00D5BE]'>githubLink</span> =
           "https://github.com/RobertoDev3"
-        </a>
+        </Link>
       </div>
     </article>
   );
