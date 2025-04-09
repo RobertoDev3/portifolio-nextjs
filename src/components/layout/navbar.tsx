@@ -30,7 +30,7 @@ export function NavBar() {
       </a>
 
       <button
-        className='block p-4 focus:outline-none md:hidden'
+        className='block cursor-pointer p-4 transition-all focus:outline-none md:hidden'
         onClick={() => setIsOpen(!isOpen)}
         aria-label='Toggle menu'
       >
