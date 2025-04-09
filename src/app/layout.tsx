@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${firaCode.className} text-foreground bg-[#020618] p-4`}
       >
-        <main className='bg-background relative mx-auto h-[calc(100dvh-32px)] max-w-[1920px] rounded-xl border'>
+        <main className='bg-background relative mx-auto h-[calc(100dvh-32px)] max-w-[1920px] rounded-[8px] border'>
           <section className='absolute top-0 left-0 z-10 w-full'>
             <NavBar />
           </section>
