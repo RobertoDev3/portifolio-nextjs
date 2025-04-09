@@ -2,6 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const links = [
@@ -13,6 +14,14 @@ const links = [
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathName = usePathname();
+  const isActiveLink = (href: string) => {
+    if (pathName === href) {
+      return 'before:absolute before:bg-[#FFB86A]';
+    }
+    return '';
+  };
 
   return (
     <nav className='relative flex w-full items-center justify-between border-b md:justify-start'>
@@ -38,7 +47,12 @@ export function NavBar() {
           {links.map((link, index) => (
             <li
               key={index}
-              className='border-b p-4 hover:border-b-3 md:min-w-[120px] md:border-r md:border-b-0 md:text-center md:first:border-l'
+              className={cn(
+                'relative border-b p-4 md:min-w-[120px]',
+                'md:border-r md:border-b-0 md:text-center md:first:border-l',
+                'before:bottom-0 before:left-0 before:h-1 before:w-full before:bg-[#FFB86A]/70 before:[content:""] hover:before:absolute',
+                isActiveLink(link.href),
+              )}
             >
               <a href={link.href} onClick={() => setIsOpen(false)}>
                 {link.label}
