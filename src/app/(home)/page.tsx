@@ -3,15 +3,15 @@ import { NavBar } from '@/components/layout/navbar';
 
 export default function Home() {
   return (
-    <article className='flex h-full flex-col justify-center gap-14 px-6'>
+    <article className='flex h-full flex-col justify-center gap-20 px-6'>
       <div className='flex flex-col gap-2'>
-        <p>Olá, eu sou o</p>
-        <h1 className='text-4xl text-[var(--heading-foreground)]'>
+        <p className='text-lg'>Olá, eu sou o</p>
+        <h1 className='text-5xl text-[var(--heading-foreground)]'>
           Roberto Teixeira
         </h1>
-        <h4>&gt; Desenvolvedor Front-end</h4>
+        <h4 className='text-xl text-[#615FFF]'>&gt; Desenvolvedor Front-end</h4>
       </div>
-      <div className='flex flex-col gap-2 text-xs'>
+      <div className='flex flex-col gap-2 text-sm'>
         <p>// Encontre meu perfil do GitHub em:</p>
         <a
           href='https://github.com/RobertoDev3'
