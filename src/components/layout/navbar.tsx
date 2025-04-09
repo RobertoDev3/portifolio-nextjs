@@ -40,7 +40,7 @@ export function NavBar() {
       <div
         className={cn(
           isOpen ? 'block' : 'hidden',
-          'bg-background absolute top-14 left-0 h-[calc(100dvh-145px)] w-full border border-b-0 md:static md:block md:h-auto md:w-auto md:border-0 md:bg-transparent',
+          'bg-background absolute top-14 left-0 h-[calc(100dvh-145px)] w-full border-t md:static md:block md:h-auto md:w-auto md:bg-transparent',
         )}
       >
         <ul className='flex flex-col md:flex-row md:items-center'>
