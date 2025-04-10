@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Home() {
+export default function Hello() {
   return (
     <article className='flex h-full flex-col justify-center gap-20 px-6'>
       <div className='flex flex-col gap-2'>

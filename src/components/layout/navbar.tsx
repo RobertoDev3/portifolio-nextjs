@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { href: '/', label: '_ola' },
-  { href: '/about', label: '_sobre-mim' },
+  { href: '/hello', label: '_ola' },
+  { href: '/about/bio', label: '_sobre-mim' },
   { href: '/projects', label: '_projetos' },
   { href: '/contact', label: '_contato' },
 ];
@@ -18,10 +18,18 @@ export function NavBar() {
 
   const pathName = usePathname();
   const isActiveLink = (href: string) => {
-    if (pathName === href) {
+    // Lógica especial para as rotas de "about"
+    if (href === '/about/bio') {
+      if (pathName === '/about' || pathName.startsWith('/about/')) {
+        return 'before:absolute before:bg-[#FFB86A]';
+      }
+    }
+    // Lógica padrão para os demais links
+    if (pathName.startsWith(href)) {
       return 'before:absolute before:bg-[#FFB86A]';
     }
-    return;
+
+    return '';
   };
 
   return (
